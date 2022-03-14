@@ -10,6 +10,7 @@ string ariel::mat(int col, int row, char c1, char c2){
     // Setting Up min and max value for the Input Chars.
     int const max = 126;
     int const min = 33;
+
     // If statements to check the validationof the input.
     if(col%2==0 || row%2==0){
         throw std::invalid_argument("Caught Exception: Mat size must be odd.");
@@ -25,6 +26,7 @@ string ariel::mat(int col, int row, char c1, char c2){
         throw std::invalid_argument("Caught Exception: Char 2 is not acceptable.");
     }
 
+    // Setting up data structure (that will be represent matrix). 
     std::vector<std::vector<char>> mat(row,std::vector<char>(col));
     string ans;
     /**
@@ -37,7 +39,7 @@ string ariel::mat(int col, int row, char c1, char c2){
             mat[i][j] = c2;
         }
     }
-    
+
     /**
     * @brief Setting up the four indexes, we will write the first symbol two times:
     * 1. First iteration - for all the Columns.
